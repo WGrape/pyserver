@@ -122,14 +122,14 @@ def init_instance():
     global global_instance_localcache
 
     global_instance_flask = Flask(app_name="flask")
-    global_instance_mysql = Mysql(mysql_config=global_config["database"])
+    # global_instance_mysql = Mysql(mysql_config=global_config["database"])
     global_instance_logger = Logger(
         logger_config=global_config["logger"], global_config=global_config
     )
-    global_instance_milvus = Milvus(
-        milvus_config=global_config["milvus"],
-        model_config=global_config["model"]["provider"]["nomic"]
-    )
+    # global_instance_milvus = Milvus(
+    #     milvus_config=global_config["milvus"],
+    #     model_config=global_config["model"]["provider"]["nomic"]
+    # )
     global_instance_localcache = Localcache()
 
 

@@ -1,7 +1,7 @@
 # 项目基础配置如下所示
 project: "pyserver"
 business: "pyserver"
-global_base_dir: "~/pyserver"
+global_base_dir: "~/pyserver/"
 env: test
 # 非实例对象配置如下所示
 ## 大模型厂商
@@ -23,3 +23,8 @@ model:
       model_type: "model_type_deepseek_chat"
       max_tokens: 2048
       retry: 3
+# 实例对象配置如下所示
+## 日志
+logger:
+  level: DEBUG
+  log_format: '%(asctime)s - %(message)s'

@@ -5,7 +5,7 @@
 """
 import traceback
 from flask import request, jsonify
-from wpylib.util.http import resp_error
+from wpylib.util.http import resp_error, resp_success
 from src.init.init import global_instance_flask, global_instance_logger
 
 
@@ -39,6 +39,16 @@ def error_handler(e):
     return resp_error(data={"exception": f"{e!r}"})
 
 
+def ping():
+    """
+    ping接口
+    :return:
+    """
+    return resp_success({
+        "data": "hello"
+    })
+
+
 def register():
     """
     注册接口
@@ -48,6 +58,6 @@ def register():
     app = global_instance_flask.get_instance_app()
 
     # 2. 注册接口
-    # app.add_url_rule(
-    #     '/api/xx/xx', view_func=xx, methods=['GET']
-    # )
+    app.add_url_rule(
+        '/ping', view_func=ping, methods=['GET']
+    )
