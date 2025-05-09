@@ -1,0 +1,7 @@
+#test*.py
+.DS_Store
+.idea/
+/logs/
+/storage
+__pycache__/
+temp*.py

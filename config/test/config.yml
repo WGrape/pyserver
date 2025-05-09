@@ -1,0 +1,25 @@
+# 项目基础配置如下所示
+project: "pyserver"
+business: "pyserver"
+global_base_dir: "~/pyserver"
+env: test
+# 非实例对象配置如下所示
+## 大模型厂商
+model:
+  name: azure
+  provider:
+    nomic:
+      # 官方参数
+      api_base: "http://localhost:11434"
+      api_key: "ollama" # ollama默认没有认证, 填任意字符串, 否则openai库会报错
+      embedding_dims: 768,
+      model: "nomic-embed-text"
+      model_type: "embedding_type_nomic"
+      retry: 3
+    deepseek_chat:
+      api_base: "http://localhost:11434/v1"
+      api_key: "ollama" # ollama默认没有认证, 填任意字符串, 否则openai库会报错
+      model: "deepseek-r1:8b"
+      model_type: "model_type_deepseek_chat"
+      max_tokens: 2048
+      retry: 3
